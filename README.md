@@ -18,11 +18,13 @@ sudo apt-get install open-vm-tools-desktop -y # scarico open-vm-tools-desktop se
 sudo reboot # riavvio il sistema
 ```
 
-## Comandi base 
+## Comandi base rete
 
 ```bash
 ls # vedo elementi di una cartella
 ip -a  # vedo le informazioni di rete (schede di rete)
 ifconfig # vedo le informazioni di rete
 who # vedo chi è online
-``
+```
+
+interpete comandi -> si chiama bash
