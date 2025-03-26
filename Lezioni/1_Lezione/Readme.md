@@ -1,6 +1,6 @@
 [Vai al file Generale](../../README.md)
 
-## Lezione 13 Marzo 2025
+# Lezione 13 Marzo 2025
 
 ```bash
 ls # vedo elementi di una cartella
