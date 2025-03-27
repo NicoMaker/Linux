@@ -509,3 +509,16 @@ sudo apt install tree
 tree /home # vedo elementi di una cartella ma anche sottocartelle e anche i file 
 tree -d /home/student # vedo elementi di una cartella e non dei file
 ```
+
+
+## Crea Cartella
+
+```bash
+mkdir cartella
+```
+
+## Crei file
+
+```bash
+touch file.txt
+```
