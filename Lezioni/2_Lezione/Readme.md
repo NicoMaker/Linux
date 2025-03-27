@@ -286,6 +286,98 @@ pwd # visualizzo il contenuto di un file dei comandi che ho fatto io sua gestion
 sudo groupadd nomegruppo # creo un gruppo
 sudo useradd nome # creo un utente
 sudo -k # si resettano le credenziali
+sudo passwd root # cambio la password di root
 ```
 
+se c'è password root entri
 
+```bash
+su # passo come root password di root
+```
+
+altrimenti
+
+```bash
+sudo su # passo come root e poi password utente
+```
+
+## FileSystem
+
+```bash
+df -h # visualizzo il contenuto di un file dei comandi che ho fatto io
+```
+
+In Linux, un **file system** è un metodo per memorizzare e organizzare i dati su un dispositivo di memorizzazione, come un disco rigido, un SSD o una chiavetta USB. È responsabile di come i file vengono creati, letti, scritti e cancellati, gestendo anche la struttura dei dati e la gestione dello spazio.
+
+### Struttura di un file system in Linux
+
+1. **Root Directory ("/")**:
+   - La radice del file system in Linux è rappresentata da `/`. Tutti i file e le directory partono da questa directory. È la "base" della struttura ad albero del file system.
+2. **Directory principali**:
+
+   - **/bin**: contiene i file eseguibili essenziali per il sistema.
+   - **/boot**: contiene i file necessari per l'avvio del sistema operativo, come il kernel.
+   - **/dev**: contiene i file di dispositivo, che rappresentano hardware e periferiche del sistema.
+   - **/etc**: contiene i file di configurazione di sistema.
+   - **/home**: contiene le home directory degli utenti, dove vengono salvati i loro dati personali.
+   - **/lib**: contiene le librerie condivise necessarie per i programmi di sistema.
+   - **/mnt**: punto di montaggio per i dispositivi temporanei.
+   - **/opt**: contiene pacchetti software opzionali e applicazioni di terze parti.
+   - **/proc**: contiene informazioni sul sistema in tempo reale (es. stato del kernel).
+   - **/root**: home directory dell'utente root (superutente).
+   - **/sbin**: contiene file eseguibili di sistema, solitamente per l'amministratore.
+   - **/tmp**: directory per file temporanei, che possono essere cancellati al riavvio del sistema.
+   - **/usr**: contiene programmi e librerie di sistema.
+   - **/var**: contiene file variabili come log, spool di stampa, file temporanei.
+
+3. **Mounting**:
+
+   - In Linux, il file system è montato (cioè reso accessibile) in una struttura ad albero. Ogni dispositivo (come un disco rigido o una partizione) è montato in una directory specifica.
+   - Puoi montare e smontare file system usando i comandi `mount` e `umount`.
+
+4. **Tipi di File System**:
+
+   - **ext4 (Extended Filesystem 4)**: il più comune file system in Linux, noto per la sua affidabilità e supporto per file di grandi dimensioni.
+   - **XFS**: un file system scalabile e ad alte prestazioni, utilizzato soprattutto in ambienti server.
+   - **Btrfs**: un file system avanzato che supporta snapshot, compressione e altre funzionalità moderne.
+   - **FAT32 e NTFS**: utilizzati per la compatibilità con sistemi Windows, ma possono essere montati anche su Linux.
+
+5. **Permessi di file**:
+
+   - Ogni file e directory ha permessi che determinano chi può leggere, scrivere o eseguire quel file. I permessi sono assegnati a tre gruppi: proprietario, gruppo e altri utenti.
+     - **r**: read (lettura)
+     - **w**: write (scrittura)
+     - **x**: execute (esecuzione)
+   - Ad esempio, `rwxr-xr--` significa che il proprietario ha tutti i permessi (lettura, scrittura, esecuzione), il gruppo ha solo lettura ed esecuzione, e gli altri utenti possono solo leggere.
+
+6. **File Speciali**:
+
+   - **File di dispositivo**: rappresentano dispositivi hardware, come dischi rigidi e terminali.
+   - **Link simbolici**: file che puntano a un altro file o directory, simili ai collegamenti di Windows.
+
+7. **Gestione dello spazio**:
+   - I file system Linux gestiscono l'allocazione dello spazio su disco utilizzando una struttura chiamata **inode**. Un inode contiene metadati su un file (come il tipo di file, i permessi e le informazioni sulla posizione).
+   - La gestione delle partizioni del disco può essere fatta tramite strumenti come `fdisk`, `parted` o `gparted`.
+
+### Montare e smontare un file system
+
+- **Montare un file system**:
+  Quando monti un file system, rendi il contenuto di una partizione o dispositivo accessibile nella directory di montaggio.
+
+  ```bash
+  mount /dev/sda1 /mnt
+  ```
+
+  In questo esempio, il dispositivo `/dev/sda1` viene montato nella directory `/mnt`.
+
+- **Smontare un file system**:
+  Quando smonti un file system, lo rendi non più accessibile. Assicurati che nessun processo stia utilizzando i file nel file system prima di smontarlo.
+  ```bash
+  umount /mnt
+  ```
+
+### Conclusione
+
+In Linux, il file system è una componente fondamentale per la gestione dei dati. Comprendere come funzionano i file system, la loro struttura e come gestirli è essenziale per amministratori di sistema e utenti avanzati.
+
+ogni cosa è un file -> anche chiavetta (tutta da radice del file /root)
