@@ -209,3 +209,27 @@ Esempio pratico:
 
 🔹 **Ricorda:** Più alto è il numero, più permessi ha l'utente! 🚀
 
+
+## Vedi documentazione
+
+```bash
+type apt # vedo la documentazione di apt
+man apt # vedo la documentazione di apt
+type alias # vedo la documentazione di alias
+```
+
+## Ifconfig 
+
+Appartiene tool di rete
+
+```bash
+ifconfig # vedo le informazioni di rete
+sudo apt install net-tools -y  # scarico net-tools sempre si
+```
+
+## Cerca nel manuale
+
+```bash
+man -k ifconfig # cerco ifconfig nel manuale
+```
+
