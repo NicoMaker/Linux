@@ -80,8 +80,15 @@ tutti comandi e opzioni separati con uno spazio
 ## Visione cartelle di sistema
 
 ```bash
-ls \etc\ # vedo elementi di una cartella
-ls -l \etc\ # vedo elementi di una cartella file,applicazioni e cartelle
+ls # vedo elementi di una cartella
+ls -l # vedo elementi di una cartella file,applicazioni e cartelle
+ls -la # vedo elementi di una cartella file,applicazioni e cartelle
+
+ls -a # vedo elementi di una cartella vedo tutto
+ls --all # vedo elementi di una cartella vedo tutto
+
+ls -l -h # vedo elementi di una cartella file,applicazioni e cartelle in megabytes
+ls -lh # vedo elementi di una cartella file,applicazioni e cartelle in megabytes
 ```
 
 estensione in Linux -> non ha significato puoi fare anche senza significato
@@ -199,5 +206,3 @@ Esempio pratico:
   - **4 (altri)** → Solo lettura (4)
 
 🔹 **Ricorda:** Più alto è il numero, più permessi ha l'utente! 🚀
-
-
