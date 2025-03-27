@@ -75,3 +75,4 @@ sudo apt update && sudo apt-get install terminator -y # scarico terminator sempr
 ping -c1 8.8.8.8 # ping google 1 volta
 ```
 
+tutti comandi e opzioni separati con uno spazio 
