@@ -382,14 +382,13 @@ In Linux, il file system è una componente fondamentale per la gestione dei dati
 
 ogni cosa è un file -> anche chiavetta (tutta da radice del file /root)
 
-
 ## Linux Founddation
 
 Linux Founddation -> linea decide chi vedere il file
 
 ## Home Student
 
-```Bash
+```bash
 ls /home/student # vedo elementi di una cartella home
 ls ~ # vedo elementi di una cartella home
 ```
@@ -404,11 +403,11 @@ contiene tutti i file di configurazioni utneti con le loro password, come è con
 ls /etc/ssh # vedo elementi di una cartella
 ```
 
-### LIB 
+### LIB
 
 Librerie sempre le più nuove
 
-```Bash
+```bash
 ls /lib # vedo elementi di una cartella
 ```
 
@@ -416,7 +415,7 @@ ls /lib # vedo elementi di una cartella
 
 vedo chiavette
 
-```Bash
+```bash
 ls /media # vedo elementi di una cartella
 ```
 
@@ -424,7 +423,7 @@ ls /media # vedo elementi di una cartella
 
 file temporanei cancella i dati senza chiedere conferma
 
-```Bash 
+```bash
 ls /tmp # vedo elementi di una cartella
 ```
 
@@ -432,17 +431,81 @@ ls /tmp # vedo elementi di una cartella
 
 vedi dati della poc tutte info del sistema
 
-```Bash
+```bash
 ls /proc # vedo elementi di una cartella
 ```
 
-tutte le info sono file 
+tutte le info sono file
 
 ### SRV
 
-vedi dove pubblici i tuoi siti web 
+vedi dove pubblici i tuoi siti web
 
-```Bash
+```bash
 ls /srv # vedo elementi di una cartella
 ```
 
+## Percorso Assluto
+
+In Linux, un **percorso assoluto** è un percorso che inizia dalla directory radice (`/`) e include tutte le sottodirectory fino al file o alla cartella desiderata. Questo tipo di percorso fornisce un riferimento completo e preciso alla posizione di un file o di una cartella nel sistema di file, indipendentemente dalla directory di lavoro corrente.
+
+Esempio di percorso assoluto in Linux:
+
+```
+/home/utente/documenti/file.txt
+```
+
+In questo caso:
+
+- `/` è la directory radice.
+- `home` è una sottodirectory della directory radice.
+- `utente` è una sottodirectory all'interno di `home`.
+- `documenti` è una sottodirectory di `utente`.
+- `file.txt` è il file che si trova all'interno della cartella `documenti`.
+
+Un percorso assoluto in Linux è sempre unico e indipendente dalla posizione in cui ti trovi nel sistema, e permette di accedere direttamente a una risorsa senza la necessità di conoscere la directory corrente.
+
+```bash
+pwd # percorso assoluto dice sepre dove sono
+```
+
+## Percorso Relativo
+
+Un **percorso relativo** in Linux, invece, è un percorso che si riferisce alla posizione di un file o di una cartella rispetto alla directory di lavoro corrente. A differenza del percorso assoluto, non inizia dalla radice del file system, ma dalla posizione in cui si trova l'utente o il programma che esegue il comando.
+
+Esempio di percorso relativo:
+
+Se ci troviamo nella directory `/home/utente/` e vogliamo accedere al file `file.txt` nella sottocartella `documenti`, il percorso relativo sarà:
+
+```
+documenti/file.txt
+```
+
+Questo percorso è valido solo se siamo già nella directory `/home/utente/`. Se ci spostiamo in una directory diversa, il percorso relativo potrebbe non essere più corretto.
+
+Un altro esempio di percorso relativo:
+
+Se ci troviamo nella cartella `/home/utente/`, e vogliamo accedere alla cartella `documenti` che è nella stessa directory, possiamo usare il percorso relativo:
+
+```
+./documenti
+```
+
+L'uso del percorso relativo è molto utile per evitare di dover scrivere percorsi lunghi e assoluti, specialmente quando si lavora all'interno di una struttura di cartelle ben definita.
+
+## Cambiare cartella
+
+```bash
+cd ~ #dentro home/student
+```
+
+## Installi Tree
+
+```bash
+sudo apt install tree
+```
+
+```bash
+tree /home # vedo elementi di una cartella ma anche sottocartelle e anche i file 
+tree -d /home/student # vedo elementi di una cartella e non dei file
+```
