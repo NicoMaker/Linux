@@ -209,7 +209,6 @@ Esempio pratico:
 
 🔹 **Ricorda:** Più alto è il numero, più permessi ha l'utente! 🚀
 
-
 ## Vedi documentazione
 
 ```bash
@@ -218,7 +217,7 @@ man apt # vedo la documentazione di apt
 type alias # vedo la documentazione di alias
 ```
 
-## Ifconfig 
+## Ifconfig
 
 Appartiene tool di rete
 
@@ -247,9 +246,46 @@ cat # visualizzo il contenuto di un file
 cat /proc/version # visualizzo il contenuto di un file
 ```
 
-File PASSWD -> contiene informazioni su utenti e gruppi 
+File PASSWD -> contiene informazioni su utenti e gruppi
 
 ```bash
 cat /etc/passwd # visualizzo il contenuto di un file
 ```
+
+## Comandi HISTORY
+
+```bash
+cat .bash_history # visualizzo il contenuto di un file dei comandi che ho fatto io
+echo $HISTFILESIZE # visualizzo il contenuto di un file dei comandi che ho fatto io
+```
+
+## Comandi ip address
+
+```bash
+ip addr show # visualizzo il contenuto di un file dei comandi che ho fatto io
+```
+
+# Comandi Sudo
+
+```bash
+sudo su # passo come root solo quello che sono nel gruppo root quello per la prima volta è router
+sudo -i # passo come root solo quello che sono nel gruppo root
+
+exit #torni studente normale non root
+```
+
+## Comando capisco dove sono posizionato in questo momento
+
+```bash
+pwd # visualizzo il contenuto di un file dei comandi che ho fatto io sua gestione -> potere diverso da root
+```
+
+## Creo Gruppo
+
+```bash
+sudo groupadd nomegruppo # creo un gruppo
+sudo useradd nome # creo un utente
+sudo -k # si resettano le credenziali
+```
+
 
