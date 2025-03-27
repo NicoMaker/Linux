@@ -381,3 +381,19 @@ In Linux, un **file system** è un metodo per memorizzare e organizzare i dati s
 In Linux, il file system è una componente fondamentale per la gestione dei dati. Comprendere come funzionano i file system, la loro struttura e come gestirli è essenziale per amministratori di sistema e utenti avanzati.
 
 ogni cosa è un file -> anche chiavetta (tutta da radice del file /root)
+
+
+## Linux Founddation
+
+Linux Founddation -> linea decide chi vedere il file
+
+## Home Student
+
+```Bash
+ls /home/student # vedo elementi di una cartella home
+ls ~ # vedo elementi di una cartella home
+```
+
+## ETC
+
+contiene tutti i file di configurazioni utneti con le loro password, come è configurata rrete e come sono configurati i gruppi
