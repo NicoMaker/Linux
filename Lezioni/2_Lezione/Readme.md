@@ -234,3 +234,22 @@ man -k ifconfig # cerco ifconfig nel manuale
 man -k "copy files" # cerco copy files nel manuale
 ```
 
+## Alias
+
+```bash
+alias c='clear' # creo un alias
+```
+
+## Comandi CAT
+
+```bash
+cat # visualizzo il contenuto di un file
+cat /proc/version # visualizzo il contenuto di un file
+```
+
+File PASSWD -> contiene informazioni su utenti e gruppi 
+
+```bash
+cat /etc/passwd # visualizzo il contenuto di un file
+```
+
