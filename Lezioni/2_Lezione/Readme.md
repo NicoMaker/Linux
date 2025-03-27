@@ -80,6 +80,124 @@ tutti comandi e opzioni separati con uno spazio
 ## Visione cartelle di sistema
 
 ```bash
-ls /etc/ # vedo elementi di una cartella
+ls \etc\ # vedo elementi di una cartella
+ls -l \etc\ # vedo elementi di una cartella file,applicazioni e cartelle
 ```
+
+estensione in Linux -> non ha significato puoi fare anche senza significato
+
+## Permessi Utente
+
+- R -> leggi
+- W -> scrivi
+- X -> esegui
+
+Se vuoi impostare i permessi di lettura (R), scrittura (W) ed esecuzione (X) per tutti gli utenti su un file o una cartella, puoi usare il comando `chmod`.
+
+Ecco tutti i casi:
+
+### 1. **Solo Lettura (R)**
+
+```bash
+chmod 444 nomefile
+```
+
+- Utente, gruppo e altri possono solo leggere.
+
+### 2. **Solo Scrittura (W)**
+
+```bash
+chmod 222 nomefile
+```
+
+- Utente, gruppo e altri possono solo scrivere (ma non leggere né eseguire).
+
+### 3. **Solo Esecuzione (X)**
+
+```bash
+chmod 111 nomefile
+```
+
+- Utente, gruppo e altri possono solo eseguire.
+
+### 4. **Lettura e Scrittura (RW)**
+
+```bash
+chmod 666 nomefile
+```
+
+- Utente, gruppo e altri possono leggere e scrivere.
+
+### 5. **Lettura ed Esecuzione (RX)**
+
+```bash
+chmod 555 nomefile
+```
+
+- Utente, gruppo e altri possono leggere ed eseguire.
+
+### 6. **Scrittura ed Esecuzione (WX)**
+
+```bash
+chmod 333 nomefile
+```
+
+- Utente, gruppo e altri possono scrivere ed eseguire.
+
+### 7. **Lettura, Scrittura ed Esecuzione (RWX)**
+
+```bash
+chmod 777 nomefile
+```
+
+- Utente, gruppo e altri possono leggere, scrivere ed eseguire. ⚠️ (Molto permissivo)
+
+Se vuoi applicare i permessi a una cartella e ai suoi contenuti in modo ricorsivo:
+
+```bash
+chmod -R 777 nomecartella
+```
+
+I numeri che usiamo nei comandi `chmod` rappresentano i permessi in **sistema ottale (base 8)** e funzionano così:
+
+Ogni permesso ha un valore numerico:
+
+- **R (lettura) → 4**
+- **W (scrittura) → 2**
+- **X (esecuzione) → 1**
+
+Per ogni utente (proprietario, gruppo, altri), si sommano i valori per ottenere i permessi desiderati:
+
+### Esempi:
+
+1. **Solo lettura (R)** → `4`
+
+   - `chmod 444 file` → Solo lettura per tutti.
+
+2. **Lettura e scrittura (RW)** → `4 + 2 = 6`
+
+   - `chmod 666 file` → Lettura e scrittura per tutti.
+
+3. **Lettura ed esecuzione (RX)** → `4 + 1 = 5`
+
+   - `chmod 555 file` → Lettura ed esecuzione per tutti.
+
+4. **Tutti i permessi (RWX)** → `4 + 2 + 1 = 7`
+   - `chmod 777 file` → Tutto consentito a tutti (⚠️ attenzione!).
+
+Ogni cifra nel comando `chmod` rappresenta i permessi per:
+
+- **Prima cifra** → Proprietario del file
+- **Seconda cifra** → Gruppo
+- **Terza cifra** → Altri utenti
+
+Esempio pratico:
+
+- `chmod 754 file`
+  - **7 (proprietario)** → Lettura (4) + Scrittura (2) + Esecuzione (1) = RWX
+  - **5 (gruppo)** → Lettura (4) + Esecuzione (1) = RX
+  - **4 (altri)** → Solo lettura (4)
+
+🔹 **Ricorda:** Più alto è il numero, più permessi ha l'utente! 🚀
+
 
