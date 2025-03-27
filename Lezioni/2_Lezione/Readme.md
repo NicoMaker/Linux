@@ -89,6 +89,8 @@ ls --all # vedo elementi di una cartella vedo tutto
 
 ls -l -h # vedo elementi di una cartella file,applicazioni e cartelle in megabytes
 ls -lh # vedo elementi di una cartella file,applicazioni e cartelle in megabytes
+
+man ls # vedo la documentazione di ls, esci cliccando q
 ```
 
 estensione in Linux -> non ha significato puoi fare anche senza significato
@@ -206,3 +208,4 @@ Esempio pratico:
   - **4 (altri)** → Solo lettura (4)
 
 🔹 **Ricorda:** Più alto è il numero, più permessi ha l'utente! 🚀
+
