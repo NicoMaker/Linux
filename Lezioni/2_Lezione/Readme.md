@@ -231,5 +231,6 @@ sudo apt install net-tools -y  # scarico net-tools sempre si
 
 ```bash
 man -k ifconfig # cerco ifconfig nel manuale
+man -k "copy files" # cerco copy files nel manuale
 ```
 
