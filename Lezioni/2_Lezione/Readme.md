@@ -397,3 +397,52 @@ ls ~ # vedo elementi di una cartella home
 ## ETC
 
 contiene tutti i file di configurazioni utneti con le loro password, come è configurata rrete e come sono configurati i gruppi
+
+### SSH
+
+```bash
+ls /etc/ssh # vedo elementi di una cartella
+```
+
+### LIB 
+
+Librerie sempre le più nuove
+
+```Bash
+ls /lib # vedo elementi di una cartella
+```
+
+### MEDIA
+
+vedo chiavette
+
+```Bash
+ls /media # vedo elementi di una cartella
+```
+
+### TEMP
+
+file temporanei cancella i dati senza chiedere conferma
+
+```Bash 
+ls /tmp # vedo elementi di una cartella
+```
+
+### PROC
+
+vedi dati della poc tutte info del sistema
+
+```Bash
+ls /proc # vedo elementi di una cartella
+```
+
+tutte le info sono file 
+
+### SRV
+
+vedi dove pubblici i tuoi siti web 
+
+```Bash
+ls /srv # vedo elementi di una cartella
+```
+
