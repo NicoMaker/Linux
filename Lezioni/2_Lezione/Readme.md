@@ -522,3 +522,9 @@ mkdir cartella
 ```bash
 touch file.txt
 ```
+
+## Dimensiomento File
+
+```bash
+ls sudo du -sh /etc/ #vede dimensione reale cartelle del file
+```
