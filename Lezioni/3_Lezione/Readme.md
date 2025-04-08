@@ -143,6 +143,9 @@ less percorso_file # visualizzo il contenuto di un file dei comandi ch8e ho fatt
 ```bash
 tail -n numero_righe percorso_file # ultime due rige di un file
 tail -n +20 percorso_file # dalla riga 20 in avanti
+tail -f percorso_file # vedi dati dei file in tempo reale 
+
+tail percorso_file # ultime 10 righe
 ```
 
 ## Head
@@ -150,4 +153,8 @@ tail -n +20 percorso_file # dalla riga 20 in avanti
 ```bash
 head -n numero_righe percorso_file # prime due rige di un file
 head -n +20 percorso_file # dalla riga 20 in avanti
+head -f percorso_file # vedi dati dei file in tempo reale 
+
+head percorso_file # primo 10 righe
 ```
+
