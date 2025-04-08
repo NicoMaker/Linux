@@ -175,13 +175,12 @@ mkdir cartella
 mkdir cartella1 cartella2 cartella3
 ```
 
-## Copi file 
+## Copi file
 
 ```bash
 cp percorso_file percorso_file # copio il file
 cp percorso_file percorso_file # copio il file
 ```
-
 
 ## Copi cartella
 
@@ -191,5 +190,62 @@ cp -r percorso_file percorso_file # copio il file
 
 
 cp percorso-file percorso-file # copio il file
-cp -i percorso_file percorso_file # copio il file dove dentro c'erano gli utenti 
+cp -i percorso_file percorso_file # copio il file dove dentro c'erano gli utenti
+```
+
+## Mv (move)
+
+Certo! Ecco come funziona il comando `mv` (abbreviazione di **move**) nel terminale Bash, ed è usato sia per **spostare** che per **rinominare** file o directory.
+
+### 📁 Rinomina un file
+
+Per rinominare un file o una cartella:
+
+```bash
+mv vecchio_nome nuovo_nome
+```
+
+🔹 Esempio:
+
+```bash
+mv relazione.txt relazione_finale.txt
+```
+
+> ✅ Il file `relazione.txt` viene **rinominato** in `relazione_finale.txt`.
+
+---
+
+### 📂 Sposta un file in un'altra directory
+
+```bash
+mv file.txt /nuova/cartella/
+```
+
+🔹 Esempio:
+
+```bash
+mv immagine.jpg ~/Immagini/
+```
+
+> ✅ Il file `immagine.jpg` viene **spostato** nella cartella `Immagini`.
+
+---
+
+### 📝 Entrambi: spostare e rinominare insieme
+
+```bash
+mv documento.txt ~/Documenti/documento_finale.txt
+```
+
+> ✅ Il file viene **spostato** nella cartella `Documenti` e **rinominato** in `documento_finale.txt`.
+
+---
+
+### ❌ Il tuo esempio sistemato:
+
+Nel tuo esempio ci sono due comandi `mv` identici (che non fanno nulla). Ecco un esempio corretto con commenti:
+
+```bash
+mv file.txt file_backup.txt   # Rinomina il file
+mv file_backup.txt ~/Backup/ # Sposta il file rinominato nella cartella Backup
 ```
