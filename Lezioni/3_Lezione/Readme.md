@@ -54,9 +54,9 @@ ls -lc cartella # ultima volta modifica al file proprietario
 ls -l --fulltime # visualizza data e ora ultima volta ma copleta
 
 ls -lt # ordina per tempo
-ls -l # ordina per nome 
+ls -l # ordina per nome
 
-ls -ltu # ordina per tempo di accesso 
+ls -ltu # ordina per tempo di accesso
 ls -ltu --reverse # ordina per tempo di accesso in ordine decrescente
 ```
 
@@ -99,18 +99,17 @@ touch -m -t 202012300000 nomefile # aggiungi al file con data 30 dicembre 2020
 
    Questo esempio separa i valori usando la virgola e stampa la seconda colonna.
 
-
 ## Vedo elementi del file
 
 ```bash
 cat file # visualizzo il contenuto di un file dei comandi che ho fatto io
-cat -n file # visualizzo il contenuto di un file dei comandi che ho fatto io con numero vicino 
+cat -n file # visualizzo il contenuto di un file dei comandi che ho fatto io con numero vicino
 cat -b file # visualizzo il contenuto di un file dei comandi che ho fatto io
 head file # visualizzo il contenuto di un file dei comandi che ho fatto io
 tail file # visualizzo il contenuto di un file dei comandi che ho fatto io
 ```
 
-## comandi opzioni dei file 
+## comandi opzioni dei file
 
 ```bash
 
@@ -121,7 +120,7 @@ file /etc/ssh/sshd_config # tipi di file che comandi che posso vedere
 file /etc/ssh/sshd_config # tipi di file che comandi che posso vedere
 ```
 
-## Concateni contenuto file in uno 
+## Concateni contenuto file in uno
 
 ```bash
 cat percorso_file percorso_file > nome file nuovo # concateno il contenuto di due file
@@ -130,7 +129,7 @@ cat percorso_file percorso_file > nome file nuovo # concateno il contenuto di du
 ## LESS
 
 /q esce
-g inizio file 
+g inizio file
 G fine file
 
 ```bash
@@ -143,7 +142,7 @@ less percorso_file # visualizzo il contenuto di un file dei comandi ch8e ho fatt
 ```bash
 tail -n numero_righe percorso_file # ultime due rige di un file
 tail -n +20 percorso_file # dalla riga 20 in avanti
-tail -f percorso_file # vedi dati dei file in tempo reale 
+tail -f percorso_file # vedi dati dei file in tempo reale
 
 tail percorso_file # ultime 10 righe
 ```
@@ -153,7 +152,7 @@ tail percorso_file # ultime 10 righe
 ```bash
 head -n numero_righe percorso_file # prime due rige di un file
 head -n +20 percorso_file # dalla riga 20 in avanti
-head -f percorso_file # vedi dati dei file in tempo reale 
+head -f percorso_file # vedi dati dei file in tempo reale
 
 head percorso_file # primo 10 righe
 ```
@@ -161,5 +160,17 @@ head percorso_file # primo 10 righe
 ## Watch
 
 ```bash
-watch nome comando # visualizzo file 
+watch nome comando # visualizzo file
+```
+
+## Creazione cartella
+
+```bash
+mkdir cartella
+```
+
+## Creazione cartelle di più
+
+```bash
+mkdir cartella1 cartella2 cartella3
 ```
