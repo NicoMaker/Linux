@@ -256,3 +256,18 @@ mv file_backup.txt ~/Backup/ # Sposta il file rinominato nella cartella Backup
 rm file # elimina file
 rm -r cartella # elimina cartella
 ```
+
+## Update 
+
+sposto solo se il file è più aggiornato dell'altro 
+
+```bash
+mv -u percorso_file percorso_file # sposto solo se il file é maggior
+```
+
+
+## Rinomina file 
+
+```bash
+mv percorso_file percorso_file # rinomina
+```
