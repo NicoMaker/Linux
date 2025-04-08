@@ -19,5 +19,28 @@ nei permessi vedi rwx cartella se invece _ file
 
 ```bash
 ls -l # lista elementi della cartella ma non i file
+ls -ld  percorso # vedo contenuto cartella solo cartelle
+
+ls -h # visualla i contenuti elementi umano con la misura 
+
+ls -la 
+la -l --all
+```
+
+file con . nascosti 
+
+## Dimensione cartella
+
+```bash
+sudo du -sh /etc # visualizzo dimensione cartella
+sudo du -sh # visualizzo dimensione cartella
+```
+
+## Ordinamento file
+
+```bash
+ls -l -X cartella # ordina dal piu grande al piu piccolo
+ls -l -r cartella # ordina dal piu piccolo al piu grande
+ls -l -S cartella # ordina dal piu piccolo al piu grande
 ```
 
