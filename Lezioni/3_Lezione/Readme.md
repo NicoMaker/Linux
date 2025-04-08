@@ -273,3 +273,9 @@ mv -u percorso_file percorso_file # sposto solo se il file é maggior
 mv percorso_file percorso_file # rinomina
 ```
 
+## Elimini con SGRED
+
+```bash
+sgred percorso_file # elimina
+```
+
