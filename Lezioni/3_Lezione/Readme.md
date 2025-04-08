@@ -249,3 +249,10 @@ Nel tuo esempio ci sono due comandi `mv` identici (che non fanno nulla). Ecco un
 mv file.txt file_backup.txt   # Rinomina il file
 mv file_backup.txt ~/Backup/ # Sposta il file rinominato nella cartella Backup
 ```
+
+## Elimina file e cartelle
+
+```bash
+rm file # elimina file
+rm -r cartella # elimina cartella
+```
