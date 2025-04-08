@@ -255,6 +255,7 @@ mv file_backup.txt ~/Backup/ # Sposta il file rinominato nella cartella Backup
 ```bash
 rm file # elimina file
 rm -r cartella # elimina cartella
+rm -f file # elimina file
 ```
 
 ## Update 
@@ -271,3 +272,4 @@ mv -u percorso_file percorso_file # sposto solo se il file é maggior
 ```bash
 mv percorso_file percorso_file # rinomina
 ```
+
