@@ -135,6 +135,19 @@ G fine file
 
 ```bash
 less percorso_file # visualizzo il contenuto di un file dei comandi che ho fatto io
-less percorso_file # visualizzo il contenuto di un file dei comandi che ho fatto io
+less percorso_file # visualizzo il contenuto di un file dei comandi ch8e ho fatto io
 ```
 
+## Tail
+
+```bash
+tail -n numero_righe percorso_file # ultime due rige di un file
+tail -n +20 percorso_file # dalla riga 20 in avanti
+```
+
+## Head
+
+```bash
+head -n numero_righe percorso_file # prime due rige di un file
+head -n +20 percorso_file # dalla riga 20 in avanti
+```
