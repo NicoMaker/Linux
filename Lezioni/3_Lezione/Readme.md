@@ -47,21 +47,51 @@ ls -l -S cartella # ordina dal piu piccolo al piu grande
 ## CTIME
 
 ```bash
-ls -l cartella # vedi data del file 
+ls -l cartella # vedi data del file
 ls -lt cartella # ordina dal piu recente al piu vecchio
 ls -lu cartella # ultima volta accesso al file
 ls -lc cartella # ultima volta modifica al file proprietario
 ls -l --fulltime # visualizza data e ora ultima volta ma copleta
+
+ls -lt # ordina per tempo
+ls -l # ordina per nome 
 ```
 
-## Touch 
+## Touch
 
 ```bash
 touch file # crea file
-stat file # vedi info del 
-touch -a file # aggiunge al file modifica tutti i dati 
+stat file # vedi info del
+touch -a file # aggiunge al file modifica tutti i dati
 
 touch -m file # aggiungi al file con data oggi ultima modifica
 touch -m -t 202012300000 nomefile # aggiungi al file con data 30 dicembre 2020
 ```
 
+1. **Per leggere un file di testo:**
+
+   ```bash
+   cat nome_del_file.txt
+   ```
+
+2. **Per leggere una riga specifica di un file (ad esempio, la riga 5):**
+
+   ```bash
+   sed -n '5p' nome_del_file.txt
+   ```
+
+3. **Per leggere un file JSON (ad esempio, usando `jq` per analizzare e ottenere dati da un file JSON):**
+
+   ```bash
+   jq '.chiave' nome_del_file.json
+   ```
+
+   Dove `.chiave` è la chiave JSON che vuoi estrarre dal file.
+
+4. **Per leggere un file CSV (se vuoi estrarre dati specifici, ad esempio dalla seconda colonna):**
+
+   ```bash
+   awk -F ',' '{print $2}' nome_del_file.csv
+   ```
+
+   Questo esempio separa i valori usando la virgola e stampa la seconda colonna.
