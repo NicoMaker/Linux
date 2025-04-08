@@ -174,3 +174,18 @@ mkdir cartella
 ```bash
 mkdir cartella1 cartella2 cartella3
 ```
+
+## Copi file 
+
+```bash
+cp percorso_file percorso_file # copio il file
+cp percorso_file percorso_file # copio il file
+```
+
+
+## Copi cartella
+
+```bash
+cp -r percorso_file percorso_file # copio il file
+cp -r percorso_file percorso_file # copio il file
+```
