@@ -120,3 +120,21 @@ file /etc/ssh/sshd_config # tipi di file che comandi che posso vedere
 
 file /etc/ssh/sshd_config # tipi di file che comandi che posso vedere
 ```
+
+## Concateni contenuto file in uno 
+
+```bash
+cat percorso_file percorso_file > nome file nuovo # concateno il contenuto di due file
+```
+
+## LESS
+
+/q esce
+g inizio file 
+G fine file
+
+```bash
+less percorso_file # visualizzo il contenuto di un file dei comandi che ho fatto io
+less percorso_file # visualizzo il contenuto di un file dei comandi che ho fatto io
+```
+
