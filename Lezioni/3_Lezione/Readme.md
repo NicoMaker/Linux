@@ -55,6 +55,9 @@ ls -l --fulltime # visualizza data e ora ultima volta ma copleta
 
 ls -lt # ordina per tempo
 ls -l # ordina per nome 
+
+ls -ltu # ordina per tempo di accesso 
+ls -ltu --reverse # ordina per tempo di accesso in ordine decrescente
 ```
 
 ## Touch
@@ -95,3 +98,5 @@ touch -m -t 202012300000 nomefile # aggiungi al file con data 30 dicembre 2020
    ```
 
    Questo esempio separa i valori usando la virgola e stampa la seconda colonna.
+
+
