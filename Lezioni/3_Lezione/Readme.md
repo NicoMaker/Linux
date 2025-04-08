@@ -158,3 +158,8 @@ head -f percorso_file # vedi dati dei file in tempo reale
 head percorso_file # primo 10 righe
 ```
 
+## Watch
+
+```bash
+watch nome comando # visualizzo file 
+```
