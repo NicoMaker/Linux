@@ -59,6 +59,9 @@ ls -l --fulltime # visualizza data e ora ultima volta ma copleta
 ```bash
 touch file # crea file
 stat file # vedi info del 
-touch -a linux.txt # aggiunge al file modifica tutti i dati 
+touch -a file # aggiunge al file modifica tutti i dati 
+
+touch -m file # aggiungi al file con data oggi ultima modifica
+touch -m -t 202012300000 nomefile # aggiungi al file con data 30 dicembre 2020
 ```
 
