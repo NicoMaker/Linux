@@ -186,6 +186,10 @@ cp percorso_file percorso_file # copio il file
 ## Copi cartella
 
 ```bash
+cp -r percorso_file percorso_file # copio il file,b
 cp -r percorso_file percorso_file # copio il file
-cp -r percorso_file percorso_file # copio il file
+
+
+cp percorso-file percorso-file # copio il file
+cp -i percorso_file percorso_file # copio il file dove dentro c'erano gli utenti 
 ```
