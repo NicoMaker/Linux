@@ -100,3 +100,13 @@ touch -m -t 202012300000 nomefile # aggiungi al file con data 30 dicembre 2020
    Questo esempio separa i valori usando la virgola e stampa la seconda colonna.
 
 
+## comandi opzioni dei file 
+
+```bash
+
+file /run /* # tipi di file che comandi che posso vedere
+
+file /etc/ssh/sshd_config # tipi di file che comandi che posso vedere
+
+file /etc/ssh/sshd_config # tipi di file che comandi che posso vedere
+```
