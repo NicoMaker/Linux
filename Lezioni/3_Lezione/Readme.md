@@ -58,5 +58,7 @@ ls -l --fulltime # visualizza data e ora ultima volta ma copleta
 
 ```bash
 touch file # crea file
-stat file # vedi info del file
+stat file # vedi info del 
+touch -a linux.txt # aggiunge al file modifica tutti i dati 
 ```
+
