@@ -100,6 +100,16 @@ touch -m -t 202012300000 nomefile # aggiungi al file con data 30 dicembre 2020
    Questo esempio separa i valori usando la virgola e stampa la seconda colonna.
 
 
+## Vedo elementi del file
+
+```bash
+cat file # visualizzo il contenuto di un file dei comandi che ho fatto io
+cat -n file # visualizzo il contenuto di un file dei comandi che ho fatto io
+cat -b file # visualizzo il contenuto di un file dei comandi che ho fatto io
+head file # visualizzo il contenuto di un file dei comandi che ho fatto io
+tail file # visualizzo il contenuto di un file dei comandi che ho fatto io
+```
+
 ## comandi opzioni dei file 
 
 ```bash
