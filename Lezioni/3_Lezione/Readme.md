@@ -104,7 +104,7 @@ touch -m -t 202012300000 nomefile # aggiungi al file con data 30 dicembre 2020
 
 ```bash
 cat file # visualizzo il contenuto di un file dei comandi che ho fatto io
-cat -n file # visualizzo il contenuto di un file dei comandi che ho fatto io
+cat -n file # visualizzo il contenuto di un file dei comandi che ho fatto io con numero vicino 
 cat -b file # visualizzo il contenuto di un file dei comandi che ho fatto io
 head file # visualizzo il contenuto di un file dei comandi che ho fatto io
 tail file # visualizzo il contenuto di un file dei comandi che ho fatto io
