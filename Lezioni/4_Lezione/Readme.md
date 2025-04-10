@@ -173,3 +173,8 @@ mario:x:1001:1001:Mario Rossi, amministratore:/home/mario:/bin/bash
 ```
 
 In questo esempio, `Mario Rossi, amministratore` è il commento che è stato aggiunto al profilo utente `mario`.
+
+### Gruppi Utente
+
+-g cambia gruppo appartenenza utente
+-G appartiene gruppi secondari
