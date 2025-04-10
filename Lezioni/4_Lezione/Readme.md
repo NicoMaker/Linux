@@ -198,3 +198,92 @@ sudo usermod -aG developer mario
 ```
 
 In questo caso, `mario` verrà aggiunto al gruppo `developer`.
+
+### Elimini utente e cartella principale
+
+Il comando che hai scritto ha un piccolo errore di sintassi. La forma corretta per eliminare un utente e la sua cartella principale su un sistema Linux è:
+
+```bash
+sudo userdel -r nome_utente
+```
+
+#### Spiegazione:
+
+- **`sudo`**: Esegui il comando con privilegi di amministratore (superutente).
+- **`userdel`**: Comando per eliminare un utente dal sistema.
+- **`-r`**: Opzione che indica che, oltre all'utente, deve essere eliminata anche la cartella principale (home directory) dell'utente.
+- **`nome_utente`**: Sostituisci con il nome dell'utente che desideri eliminare.
+
+#### Cosa fa il comando:
+
+1. **Elimina l'utente**: Rimuove il nome dell'utente dal sistema, inclusi i dati relativi all'accesso e alle configurazioni personali.
+2. **Rimuove la home directory**: Con l'opzione `-r`, elimina anche la cartella home dell'utente, che contiene i suoi file personali, come documenti e configurazioni.
+
+#### Attenzione:
+
+- Questo comando è **irreversibile**. Una volta eseguito, tutti i dati dell'utente, inclusi i file nella sua home directory, verranno cancellati definitivamente. Assicurati di fare un backup se necessario.
+
+### Sposti di utente
+
+Il blocco che hai scritto mostra come **cambiare utente** nel terminale Linux usando il comando `su`. Ecco una spiegazione passo passo:
+
+---
+
+### Comando:
+
+```bash
+su nome_utente
+```
+
+#### Significato:
+
+- **`su`** sta per **"substitute user"** (sostituisci utente).
+- **`nome_utente`** è l'utente al quale vuoi passare.
+- Quando **non specifichi nessun utente**, `su` prova a passare all’utente root per impostazione predefinita.
+- Ti verrà richiesta la **password dell'utente a cui vuoi passare** (non la tua, ma quella di `nome_utente`).
+
+#### Nota:
+
+Per passare a un altro utente, **devi avere il permesso** (in particolare per passare a `root`, devi essere nel gruppo `sudo` o `wheel`, a seconda del sistema).
+
+---
+
+### Esempio pratico:
+
+Se sei loggato come `studente` e vuoi cambiare utente e passare a `admin`:
+
+```bash
+su admin
+```
+
+Poi ti chiederà:
+
+```
+Password:
+```
+
+Se la password è corretta, ora sei `admin`.
+
+---
+
+### Per tornare indietro (utente precedente):
+
+```bash
+exit
+```
+
+Questo **chiude la shell dell’utente attuale** e **torna al precedente utente**.
+
+---
+
+### Riepilogo:
+
+| Comando          | Azione                                                         |
+| ---------------- | -------------------------------------------------------------- |
+| `su nome_utente` | Cambia utente nel terminale (richiede la password dell’utente) |
+| `exit`           | Torna all’utente precedente (chiude la shell attuale)          |
+
+---
+
+
+
