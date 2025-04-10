@@ -424,8 +424,6 @@ Il sistema interpreta `users.txt` come **argomento aggiuntivo non valido**, **no
 who -a > users.txt
 ```
 
-Questo comando **esegue `who -a`** e **salva l'output nel file `users.txt`**, sovrascrivendo il contenuto precedente.
-
 ---
 
 ### 📝 Esempi pratici
@@ -581,5 +579,109 @@ chmod u+r users.txt
 | `chmod u-r users.txt` | Rimuove il permesso di lettura per il proprietario del file |
 | `chmod u+r users.txt` | Riaggiunge il permesso di lettura per il proprietario       |
 | `ls -l users.txt`     | Verifica lo stato attuale dei permessi                      |
+
+---
+
+
+## 📄 Documentazione: Comando `id > users.txt`
+
+### 🔍 Descrizione generale
+
+Il comando `id` in sistemi Unix/Linux serve per **visualizzare l'ID utente e i gruppi** a cui appartiene l'utente attualmente connesso.  
+Il simbolo `>` viene usato per **reindirizzare l'output** del comando in un file, sovrascrivendo il contenuto esistente.
+
+Il comando completo:
+
+```bash
+id > users.txt
+```
+
+significa:
+
+> "Esegui il comando `id` e **scrivi il risultato** nel file `users.txt`, **sovrascrivendo** qualsiasi contenuto precedente."
+
+---
+
+### 🧱 Sintassi del comando
+
+```bash
+id [opzioni]
+```
+
+```bash
+comando > nome_file
+```
+
+- `id`: mostra UID (User ID), GID (Group ID) e gruppi dell'utente
+- `>`: redireziona l’output **standard** verso un file (in scrittura)
+- `users.txt`: nome del file dove salvare l’output
+
+---
+
+### ⚙️ Esempio di output del comando `id`
+
+Eseguendo:
+
+```bash
+id
+```
+
+Potresti ottenere un risultato simile a:
+
+```
+uid=1000(mario) gid=1000(mario) gruppi=1000(mario),27(sudo),1001(dev)
+```
+
+Questo mostra:
+- `uid=1000(mario)`: ID utente e nome
+- `gid=1000(mario)`: ID del gruppo principale
+- `gruppi`: tutti i gruppi a cui appartiene l’utente
+
+---
+
+### 📁 Esempio pratico di `id > users.txt`
+
+```bash
+id > users.txt
+```
+
+1. Esegue `id`
+2. Scrive l’output nel file `users.txt`
+3. Se il file non esiste, lo crea
+4. Se esiste, lo **sovrascrive**
+
+🔍 Per vedere il contenuto del file dopo il comando:
+
+```bash
+cat users.txt
+```
+
+---
+
+### 🔁 Variante: aggiungere senza sovrascrivere
+
+Se vuoi **aggiungere** l’output al file (senza cancellare ciò che c’era prima):
+
+```bash
+id >> users.txt
+```
+
+---
+
+### ⚠️ Attenzione
+
+- Usando `>` **sovrascrivi** sempre il file: usalo con cautela!
+- Se il file è protetto da permessi, potresti ricevere un errore di "Permission denied"
+
+---
+
+### ✅ Conclusione
+
+| Comando | Descrizione |
+|---------|-------------|
+| `id` | Mostra UID, GID e gruppi dell’utente attuale |
+| `id > users.txt` | Salva l’output nel file `users.txt` (sovrascrive) |
+| `id >> users.txt` | Aggiunge l’output in fondo al file (non sovrascrive) |
+| `cat users.txt` | Visualizza il contenuto del file |
 
 ---
