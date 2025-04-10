@@ -890,3 +890,10 @@ source ~/.bashrc
 ```
 
 ---
+
+
+## Tolgo alias per questo terminal
+
+```bash
+unalias comando_fare
+```
