@@ -97,4 +97,45 @@ Questo comando crea l'utente `mario` con le seguenti caratteristiche:
 - Appartenenza ai gruppi `admin` e `developer`.
 - Scadenza dell'account fissata al 31 dicembre 2025.
 
+### Visualizzazione informazioni sulla scadenza della password
 
+Il comando `sudo chage -l u2` viene utilizzato per visualizzare le informazioni sulla scadenza e la gestione della password per l'utente `u2` nel sistema Linux.
+
+### Spiegazione del comando:
+
+- `sudo`: Esegue il comando con privilegi di superutente (amministratore).
+- `chage`: È un comando utilizzato per modificare le informazioni sulla gestione della password di un utente, come la scadenza della password, la durata minima e massima della password, ecc.
+- `-l`: Mostra le informazioni correnti relative alla password dell'utente.
+- `u2`: È il nome dell'utente di cui si desidera visualizzare le informazioni (in questo caso, `u2`).
+
+#### Cosa fa `chage -l`:
+
+Quando esegui `chage -l u2`, il sistema restituirà informazioni come:
+
+1. **Last password change**: La data dell'ultima modifica della password.
+2. **Password expires**: La data in cui la password dell'utente scadrà.
+3. **Password inactive**: La data dopo la quale l'account diventa inattivo se la password non viene cambiata.
+4. **Account expires**: La data di scadenza dell'account stesso (se impostata).
+5. **Minimum number of days between password change**: Il numero minimo di giorni tra un cambio password e l'altro.
+6. **Maximum number of days between password change**: Il numero massimo di giorni che una password può essere utilizzata prima di doverla cambiare.
+7. **Warning period before password expires**: Il periodo di tempo (in giorni) durante il quale l'utente viene avvisato prima che la password scada.
+
+#### Esempio di output:
+
+```
+Last password change                                    : May 10, 2024
+Password expires                                        : Jul 10, 2024
+Password inactive                                       : never
+Account expires                                         : never
+Minimum number of days between password change          : 7
+Maximum number of days between password change          : 90
+Warning period before password expires                  : 7
+```
+
+In questo esempio:
+
+- L'utente ha cambiato la sua password l'11 maggio 2024.
+- La password scadrà il 10 luglio 2024.
+- L'account non ha una data di scadenza e non ci sono restrizioni sull'inattività della password.
+
+Questo comando è utile per monitorare e gestire la sicurezza delle password degli utenti nel sistema.
