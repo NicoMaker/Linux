@@ -48,4 +48,53 @@ File Propretario sia gruppo che utente sono uguali (gruppo e utente)
      ```
      In questo caso, "mario" è il gruppo primario, mentre "adm", "cdrom", e "sudo" sono gruppi supplementari.
 
+### Creazione Utente con gruppi
+
+```bash
+sudo useradd -m -d /home/utente -c "commento" -s /bin/bash -G gruppo1,gruppo2 nome
+```
+
+#### Spiegazione dei parametri:
+
+- `sudo`: Esegui il comando con privilegi di amministratore.
+- `useradd`: Comando per creare un nuovo utente nel sistema.
+- `-m`: Crea la home directory dell'utente se non esiste.
+- `-d /home/utente`: Specifica il percorso della home directory dell'utente.
+- `-c "commento"`: Aggiunge una descrizione o un commento associato all'utente (ad esempio, il nome completo).
+- `-s /bin/bash`: Specifica la shell predefinita per l'utente, in questo caso `bash`.
+- `-G gruppo1,gruppo2`: Aggiunge l'utente ai gruppi specificati (separati da virgola). Puoi aggiungere più gruppi come desiderato.
+- `nome`: Il nome dell'utente che stai creando.
+
+#### Esempio:
+
+Se vuoi creare un utente chiamato `mario` con una home directory in `/home/mario`, descrizione "Utente Mario", shell bash e farlo appartenere ai gruppi `admin` e `developer`, il comando sarà:
+
+```bash
+sudo useradd -m -d /home/mario -c "Utente Mario" -s /bin/bash -G admin,developer mario
+```
+
+Per aggiungere una data di scadenza all'utente, puoi utilizzare l'opzione `-e` con il comando `useradd`. L'opzione `-e` consente di specificare una data di scadenza per l'account, dopodiché l'utente non potrà più accedere al sistema.
+
+La sintassi per la data di scadenza è nel formato `YYYY-MM-DD`.
+
+### Esempio di comando con data di scadenza:
+
+Se vuoi creare l'utente `mario` con una data di scadenza fissata al 31 dicembre 2025, il comando diventa:
+
+```bash
+sudo useradd -m -d /home/mario -c "Utente Mario" -s /bin/bash -G admin,developer -e 2025-12-31 mario
+```
+
+#### Spiegazione aggiuntiva:
+
+- `-e 2025-12-31`: Imposta la data di scadenza dell'account utente al 31 dicembre 2025. Dopo questa data, l'utente non potrà più accedere al sistema, ma l'account rimarrà esistente fino a che non venga rimosso manualmente.
+
+Questo comando crea l'utente `mario` con le seguenti caratteristiche:
+
+- Home directory in `/home/mario`.
+- Descrizione "Utente Mario".
+- Shell bash (`/bin/bash`).
+- Appartenenza ai gruppi `admin` e `developer`.
+- Scadenza dell'account fissata al 31 dicembre 2025.
+
 
