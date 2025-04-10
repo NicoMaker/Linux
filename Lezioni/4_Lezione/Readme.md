@@ -820,14 +820,13 @@ Se ti riferivi a questo, allora sì: **7 è il massimo**.
 
 root e utenti superadmin -> non sono soggetti a limitazioni di permessi (sempre tutto)
 
-
-## Alias 
+## Alias
 
 ```bash
 alias comando_fare=comando_linux
 ```
 
-disponibili solo in questo terminal 
+disponibili solo in questo terminal
 
 per persistenti -> nel file bashrc
 
@@ -891,9 +890,24 @@ source ~/.bashrc
 
 ---
 
-
 ## Tolgo alias per questo terminal
 
 ```bash
 unalias comando_fare
 ```
+
+### Echo$0
+
+Il comando `echo $0` in un terminale (Linux, macOS, o altre shell Unix-like) stampa il nome del programma o dello script che è stato eseguito.
+
+### Dettagli:
+
+- **`echo`**: È un comando che stampa il suo argomento sul terminale.
+- **`$0`**: È una variabile speciale in shell che contiene il nome dello script o del programma che è stato eseguito. Ad esempio:
+  - Se stai eseguendo uno script chiamato `myscript.sh`, eseguendo `echo $0` verrà stampato `myscript.sh`.
+  - Se stai eseguendo la shell interattiva, `echo $0` potrebbe stampare qualcosa come `bash`, `zsh`, `sh`, a seconda della shell in uso.
+
+In sintesi, `echo $0` è un modo per vedere quale programma o shell è stato avviato nel terminale.
+
+/etc/shells -> vedi tutte le possibili shell disponibili in Linux
+
