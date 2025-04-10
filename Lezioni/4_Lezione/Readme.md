@@ -178,3 +178,23 @@ In questo esempio, `Mario Rossi, amministratore` è il commento che è stato agg
 
 -g cambia gruppo appartenenza utente
 -G appartiene gruppi secondari
+
+#### Aggiungi un gruppo all'utwnte
+
+Il comando che hai scritto serve per aggiungere un utente a un gruppo in un sistema basato su Linux. Ecco cosa fa ogni parte del comando:
+
+- `sudo`: esegue il comando come amministratore (root).
+- `usermod`: è il comando utilizzato per modificare un account utente.
+- `-aG`: l'opzione `-a` aggiunge l'utente al gruppo specificato, mentre `-G` specifica il gruppo o i gruppi a cui l'utente deve essere aggiunto.
+- `gruppo`: è il nome del gruppo a cui l'utente deve essere aggiunto.
+- `utente`: è il nome dell'utente che deve essere aggiunto al gruppo.
+
+Esempio:
+
+Se vuoi aggiungere l'utente `mario` al gruppo `developer`, il comando sarà:
+
+```bash
+sudo usermod -aG developer mario
+```
+
+In questo caso, `mario` verrà aggiunto al gruppo `developer`.
