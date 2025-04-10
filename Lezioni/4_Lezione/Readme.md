@@ -12,4 +12,6 @@ sudo passwd utente
 ```
 
 Shadow -> file delle password eseguo solo da amministartore 
-Passwd -> file degni utenti eseguono tutti 
+Passwd -> file degni utenti eseguono tutti
+
+File Propretario sia gruppo che utente sono uguali (gruppo e utente)
