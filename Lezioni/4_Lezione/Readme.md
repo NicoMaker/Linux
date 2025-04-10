@@ -582,7 +582,6 @@ chmod u+r users.txt
 
 ---
 
-
 ## 📄 Documentazione: Comando `id > users.txt`
 
 ### 🔍 Descrizione generale
@@ -633,6 +632,7 @@ uid=1000(mario) gid=1000(mario) gruppi=1000(mario),27(sudo),1001(dev)
 ```
 
 Questo mostra:
+
 - `uid=1000(mario)`: ID utente e nome
 - `gid=1000(mario)`: ID del gruppo principale
 - `gruppi`: tutti i gruppi a cui appartiene l’utente
@@ -677,11 +677,124 @@ id >> users.txt
 
 ### ✅ Conclusione
 
-| Comando | Descrizione |
-|---------|-------------|
-| `id` | Mostra UID, GID e gruppi dell’utente attuale |
-| `id > users.txt` | Salva l’output nel file `users.txt` (sovrascrive) |
+| Comando           | Descrizione                                          |
+| ----------------- | ---------------------------------------------------- |
+| `id`              | Mostra UID, GID e gruppi dell’utente attuale         |
+| `id > users.txt`  | Salva l’output nel file `users.txt` (sovrascrive)    |
 | `id >> users.txt` | Aggiunge l’output in fondo al file (non sovrascrive) |
-| `cat users.txt` | Visualizza il contenuto del file |
+| `cat users.txt`   | Visualizza il contenuto del file                     |
+
+---
+
+Perfetto! Ecco una documentazione **chiara e completa** sui **simboli `-r`, `-w`, `-x`** quando vengono usati con il comando `chmod` per **rimuovere i permessi** sui file.
+
+---
+
+## 📄 Documentazione: Rimozione dei permessi `read`, `write`, `execute` sui file
+
+### 🔍 Descrizione generale
+
+Nel sistema Unix/Linux, ogni file o directory ha dei **permessi di accesso** associati a tre categorie:
+
+- **u** → utente (owner, cioè il proprietario del file)
+- **g** → gruppo
+- **o** → altri (others)
+- **a** → tutti (all: `u`, `g` e `o`)
+
+I permessi principali sono:
+
+| Simbolo | Permesso | Significato                      |
+| ------- | -------- | -------------------------------- |
+| `r`     | read     | Lettura del contenuto del file   |
+| `w`     | write    | Modifica o eliminazione          |
+| `x`     | execute  | Esecuzione del file (es. script) |
+| `root `   | se togli ha sempre tutto                  |
+
+---
+
+### 🔧 Sintassi per **rimuovere** i permessi
+
+```bash
+chmod [chi]-[permesso] nomefile
+```
+
+- `chi`: u, g, o oppure a
+- `-`: indica la **rimozione** del permesso
+- `[permesso]`: può essere `r`, `w`, o `x`
+
+---
+
+### 🟥 Rimozione dei permessi: spiegazione
+
+#### 🔸 `-r` → Rimuove il permesso di **lettura**
+
+```bash
+chmod u-r file.txt
+```
+
+📌 Il proprietario **non potrà più leggere** il file `file.txt`.
+
+---
+
+#### 🔸 `-w` → Rimuove il permesso di **scrittura**
+
+```bash
+chmod g-w file.txt
+```
+
+📌 Il **gruppo** non potrà più **modificare** o **cancellare** il file.
+
+---
+
+#### 🔸 `-x` → Rimuove il permesso di **esecuzione**
+
+```bash
+chmod o-x script.sh
+```
+
+📌 Gli **altri utenti** non potranno più eseguire `script.sh` come programma.
+
+---
+
+### 📁 Esempi pratici completi
+
+#### 1. Rimuovere tutti i permessi al gruppo:
+
+```bash
+chmod g-rwx documento.txt
+```
+
+#### 2. Togliere permesso di esecuzione a tutti:
+
+```bash
+chmod a-x script.sh
+```
+
+#### 3. Verificare i permessi prima e dopo:
+
+```bash
+ls -l file.txt
+# Output prima: -rwxrw-r--
+# Output dopo chmod o-x file.txt: -rwxrw-r--
+```
+
+---
+
+### ⚠️ Attenzione
+
+- Se rimuovi il permesso `r` a te stesso (`u-r`), **non potrai più leggere il tuo file**!
+- Se togli `x` a uno script (`.sh`), **non sarà più eseguibile direttamente**:
+  - dovrai eseguirlo con `bash script.sh` invece di `./script.sh`
+
+---
+
+### ✅ Riepilogo tabella comandi
+
+| Comando            | Effetto                        |
+| ------------------ | ------------------------------ |
+| `chmod u-r file`   | Togli lettura al proprietario  |
+| `chmod g-w file`   | Togli scrittura al gruppo      |
+| `chmod o-x file`   | Togli esecuzione agli altri    |
+| `chmod a-rwx file` | Togli tutti i permessi a tutti |
 
 ---
