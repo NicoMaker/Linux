@@ -819,3 +819,74 @@ Questa rappresentazione viene usata ad esempio nei comandi come `chmod` per asse
 Se ti riferivi a questo, allora sì: **7 è il massimo**.
 
 root e utenti superadmin -> non sono soggetti a limitazioni di permessi (sempre tutto)
+
+
+## Alias 
+
+```bash
+alias comando_fare=comando_linux
+```
+
+disponibili solo in questo terminal 
+
+per persistenti -> nel file bashrc
+
+```bash
+nano .bashrc
+```
+
+Il comando:
+
+```bash
+source .bashrc
+```
+
+oppure, in forma equivalente:
+
+```bash
+. .bashrc
+```
+
+serve per **eseguire** il file `.bashrc` nel **contesto della shell attuale**, cioè ricaricare tutte le configurazioni definite in quel file **senza dover chiudere e riaprire il terminale**.
+
+---
+
+### Ma che cos'è `.bashrc`?
+
+`.bashrc` è un file di configurazione usato dalla shell **Bash**. Di solito si trova nella home directory (`~/.bashrc`) ed è eseguito **ogni volta che apri un nuovo terminale interattivo non di login**. Contiene configurazioni come:
+
+- Alias personalizzati (es. `alias ll='ls -la'`)
+- Variabili d’ambiente (es. `export PATH=...`)
+- Funzioni di shell
+- Colori per il prompt
+- E altro ancora...
+
+---
+
+### Perché si usa `source .bashrc`?
+
+Quando modifichi `.bashrc`, i cambiamenti **non hanno effetto immediato**. Per applicarli subito senza riavviare il terminale, usi:
+
+```bash
+source ~/.bashrc
+```
+
+In questo modo, le nuove impostazioni entrano subito in vigore.
+
+---
+
+### Esempio pratico
+
+Hai aggiunto questa riga a `.bashrc`:
+
+```bash
+alias gs='git status'
+```
+
+Per poter usare subito `gs` come alias di `git status`, basta eseguire:
+
+```bash
+source ~/.bashrc
+```
+
+---
