@@ -10,3 +10,6 @@
 sudo useradd utente
 sudo passwd utente
 ```
+
+Shadow -> file delle password eseguo solo da amministartore 
+Passwd -> file degni utenti eseguono tutti 
