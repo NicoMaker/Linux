@@ -817,3 +817,5 @@ Hai ragione! Se stai parlando in stile **Unix/Linux**, allora i permessi sono ra
 Questa rappresentazione viene usata ad esempio nei comandi come `chmod` per assegnare i permessi a file e cartelle.
 
 Se ti riferivi a questo, allora sì: **7 è il massimo**.
+
+root e utenti superadmin -> non sono soggetti a limitazioni di permessi (sempre tutto)
