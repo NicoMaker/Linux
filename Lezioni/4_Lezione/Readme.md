@@ -357,3 +357,229 @@ groupmod -g 505 devteam
 ➡️ Cambia l'ID del gruppo `devteam` in 505.
 
 ---
+
+Ecco una documentazione completa sul comando `who -a users.txt`, con spiegazione dettagliata di ogni parte:
+
+---
+
+## 📄 Documentazione: Comando `who -a users.txt`
+
+### 🔍 Descrizione generale
+
+Il comando `who` in ambiente Unix/Linux serve per visualizzare informazioni sugli utenti attualmente connessi al sistema. L'opzione `-a` estende l'output con tutte le informazioni disponibili. Tuttavia, l’aggiunta di `users.txt` in questo comando non è sintatticamente corretta, e può portare a fraintendimenti. Vediamo tutto nel dettaglio.
+
+---
+
+### 🧱 Sintassi base
+
+```bash
+who [opzioni]
+```
+
+---
+
+### ⚙️ Spiegazione del comando `who -a`
+
+```bash
+who -a
+```
+
+L'opzione `-a` (abbreviazione di `--all`) mostra **tutte** le informazioni disponibili, ovvero una combinazione di più opzioni come:
+
+- `-b` — Ultimo reboot del sistema
+- `-d` — Processi morti (zombie login processes)
+- `-H` — Aggiunge intestazioni di colonna
+- `-l` — Mostra i login disponibili
+- `-p` — Mostra i processi di init attivi
+- `-r` — Mostra il runlevel attuale
+- `-s` — Output abbreviato
+- `-t` — Mostra l'ultima modifica del tempo di sistema
+- `-u` — Aggiunge informazioni sugli idle time
+
+✅ **Esempio di output di `who -a`:**
+
+```
+           system boot  2025-04-10 09:15
+           run-level 5  2025-04-10 09:15
+LOGIN      tty1         2025-04-10 09:15               1234 id=1
+username   tty2         2025-04-10 10:00  00:10        5678
+```
+
+---
+
+### 📁 E il file `users.txt`?
+
+Quando scrivi:
+
+```bash
+who -a users.txt
+```
+
+Il sistema interpreta `users.txt` come **argomento aggiuntivo non valido**, **non come un file di input**.
+
+> ❌ `who` **non** accetta file come input in questo modo.  
+> ✅ `users.txt` potrebbe essere usato come **output di un reindirizzamento**, tipo:
+
+```bash
+who -a > users.txt
+```
+
+Questo comando **esegue `who -a`** e **salva l'output nel file `users.txt`**, sovrascrivendo il contenuto precedente.
+
+---
+
+### 📝 Esempi pratici
+
+#### ✅ Salvare tutte le informazioni degli utenti connessi in un file:
+
+```bash
+who -a > users.txt
+```
+
+#### ✅ Aggiungere l'output al file invece di sovrascrivere:
+
+```bash
+who -a >> users.txt
+```
+
+#### ✅ Visualizzare il contenuto del file creato:
+
+```bash
+cat users.txt
+```
+
+---
+
+### ⚠️ Errori comuni
+
+- `who -a users.txt`: ❌ errore o ignorato perché `users.txt` non è un'opzione valida
+- `who users.txt`: ❌ errore, perché `who` non accetta input da file direttamente
+
+---
+
+### ✅ Conclusione
+
+| Comando corretto     | Scopo                                                   |
+| -------------------- | ------------------------------------------------------- |
+| `who -a`             | Mostra tutte le informazioni sugli utenti connessi      |
+| `who -a > users.txt` | Salva l'output completo in un file chiamato `users.txt` |
+| `cat users.txt`      | Visualizza il contenuto del file creato                 |
+
+Certo! Ecco la documentazione completa per il comando `chmod u-r users.txt`, spiegata passo passo:
+
+---
+
+## 📄 Documentazione: Comando `chmod u-r users.txt`
+
+### 🔍 Descrizione generale
+
+Il comando `chmod` (change mode) viene utilizzato in sistemi Unix/Linux per **modificare i permessi di accesso** ai file e alle directory.
+
+Il comando:
+
+```bash
+chmod u-r users.txt
+```
+
+serve per **rimuovere il permesso di lettura per il proprietario (utente)** sul file `users.txt`.
+
+---
+
+### 🧱 Sintassi base
+
+```bash
+chmod [chi][+/-=][permessi] nome_file
+```
+
+- **chi**: Specifica a chi applicare il cambiamento:
+
+  - `u`: utente (proprietario del file)
+  - `g`: gruppo
+  - `o`: altri
+  - `a`: tutti (user, group, others)
+
+- **+**: aggiunge il permesso
+- **-**: rimuove il permesso
+- **=**: imposta esattamente i permessi specificati
+
+- **permessi**:
+  - `r`: read (lettura)
+  - `w`: write (scrittura)
+  - `x`: execute (esecuzione)
+
+---
+
+### ⚙️ Spiegazione del comando `chmod u-r users.txt`
+
+| Parte       | Significato                       |
+| ----------- | --------------------------------- |
+| `chmod`     | Cambia i permessi del file        |
+| `u`         | Applica al proprietario (user)    |
+| `-r`        | Rimuove il permesso di lettura    |
+| `users.txt` | File a cui si applica la modifica |
+
+➡️ Dopo l’esecuzione, **il proprietario del file non potrà più leggerlo** (a meno di ripristinarne il permesso).
+
+---
+
+### 🔐 Esempio pratico
+
+Supponiamo di avere i seguenti permessi iniziali:
+
+```bash
+ls -l users.txt
+# -rw-r--r-- 1 mario mario  300 Apr 10 10:00 users.txt
+```
+
+Dove:
+
+- `-rw-r--r--` indica che l’**utente** può leggere e scrivere,
+- il **gruppo** può solo leggere,
+- **altri** possono solo leggere.
+
+Dopo:
+
+```bash
+chmod u-r users.txt
+```
+
+Risultato:
+
+```bash
+ls -l users.txt
+# --w-r--r-- 1 mario mario  300 Apr 10 10:00 users.txt
+```
+
+Ora il proprietario **non può più leggere** il file.
+
+---
+
+### ❓ Come ripristinare il permesso di lettura
+
+Puoi usare:
+
+```bash
+chmod u+r users.txt
+```
+
+---
+
+### ⚠️ Attenzione
+
+- Se rimuovi il permesso di lettura a te stesso (`u-r`), **non potrai più leggere il file fino a quando non riaggiungi il permesso**.
+- Se il file è importante, verifica sempre i permessi prima di modificarli con:
+  ```bash
+  ls -l users.txt
+  ```
+
+---
+
+### ✅ Conclusione
+
+| Comando               | Effetto                                                     |
+| --------------------- | ----------------------------------------------------------- |
+| `chmod u-r users.txt` | Rimuove il permesso di lettura per il proprietario del file |
+| `chmod u+r users.txt` | Riaggiunge il permesso di lettura per il proprietario       |
+| `ls -l users.txt`     | Verifica lo stato attuale dei permessi                      |
+
+---
