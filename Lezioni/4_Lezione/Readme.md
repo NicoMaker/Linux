@@ -911,3 +911,16 @@ In sintesi, `echo $0` è un modo per vedere quale programma o shell è stato avv
 
 /etc/shells -> vedi tutte le possibili shell disponibili in Linux
 
+
+
+### Creazione file Script (Schell)
+
+```bash
+nano script.sh
+```
+
+### Esegui Script
+
+```bash
+./script.sh
+```
