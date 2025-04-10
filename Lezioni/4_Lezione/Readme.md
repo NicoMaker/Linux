@@ -47,3 +47,5 @@ File Propretario sia gruppo che utente sono uguali (gruppo e utente)
      mario : mario adm cdrom sudo
      ```
      In questo caso, "mario" è il gruppo primario, mentre "adm", "cdrom", e "sudo" sono gruppi supplementari.
+
+
