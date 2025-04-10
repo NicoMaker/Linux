@@ -139,3 +139,37 @@ In questo esempio:
 - L'account non ha una data di scadenza e non ci sono restrizioni sull'inattività della password.
 
 Questo comando è utile per monitorare e gestire la sicurezza delle password degli utenti nel sistema.
+
+### Modificare la descrizione (commento) di un utente
+
+Il comando `sudo usermod -c "commento" nome_utente` viene utilizzato per modificare la descrizione (commento) di un utente nel sistema. Il commento è spesso usato per aggiungere una descrizione o una nota associata all'utente, come il nome completo o altre informazioni utili.
+
+#### Spiegazione del comando:
+
+- `sudo`: Esegue il comando con privilegi di amministratore.
+- `usermod`: È il comando utilizzato per modificare un account utente già esistente.
+- `-c "commento"`: Imposta o modifica il campo di commento dell'utente. Il commento può essere qualsiasi testo che descriva l'utente, ad esempio il nome completo, la funzione o il reparto in cui lavora.
+- `nome_utente`: È il nome dell'utente che desideri modificare.
+
+#### Esempio:
+
+Supponiamo di voler modificare l'utente `mario` e aggiungere un commento che dica "Mario Rossi, amministratore". Il comando sarebbe:
+
+```bash
+sudo usermod -c "Mario Rossi, amministratore" mario
+```
+
+#### Cosa accade:
+
+- Il comando modifica l'account dell'utente `mario` aggiungendo o aggiornando il commento nel suo profilo utente.
+- Dopo l'esecuzione, puoi verificare il commento usando il comando `getent passwd mario` o `cat /etc/passwd`, dove troverai la descrizione (commento) associata all'utente.
+
+#### Esempio di output dopo la modifica:
+
+Se esegui `getent passwd mario`, il risultato potrebbe essere simile a questo:
+
+```
+mario:x:1001:1001:Mario Rossi, amministratore:/home/mario:/bin/bash
+```
+
+In questo esempio, `Mario Rossi, amministratore` è il commento che è stato aggiunto al profilo utente `mario`.
