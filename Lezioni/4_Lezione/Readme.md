@@ -924,3 +924,24 @@ nano script.sh
 ```bash
 ./script.sh
 ```
+
+### Shebang
+
+Il comando che hai scritto, `#!bin/bash`, sembra contenere un errore. In realtà, dovrebbe essere:
+
+```bash
+#!/bin/bash
+```
+
+Questo è chiamato *shebang* ed è utilizzato all'inizio di uno script in Linux o macOS per indicare al sistema quale interprete deve essere usato per eseguire lo script. Nel caso specifico:
+
+- `#!/bin/bash` indica che lo script deve essere eseguito con l'interprete **Bash** (Bourne Again SHell), che è uno dei terminali più comuni in ambienti Unix-like.
+
+Lo shebang si trova sempre come prima riga di un file di script (come `.sh`), ed è seguito dal percorso dell'interprete che si vuole utilizzare per eseguire lo script.
+
+Quindi:
+
+- `#!` è una sequenza che dice al sistema che quello che segue è il percorso dell'interprete.
+- `/bin/bash` è il percorso completo del programma Bash sul sistema.
+
+Questo permette di eseguire lo script direttamente dalla riga di comando senza dover specificare manualmente l'interprete Bash.
