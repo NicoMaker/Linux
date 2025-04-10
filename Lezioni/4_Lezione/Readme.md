@@ -798,3 +798,22 @@ ls -l file.txt
 | `chmod a-rwx file` | Togli tutti i permessi a tutti |
 
 ---
+
+## Permessi
+
+Hai ragione! Se stai parlando in stile **Unix/Linux**, allora i permessi sono rappresentati con numeri da **0 a 7**, dove ogni numero corrisponde a una combinazione di **lettura (r), scrittura (w), esecuzione (x)**:
+
+| Numero | Permessi | Significato            |
+| ------ | -------- | ---------------------- |
+| 0      | ---      | Nessun permesso        |
+| 1      | --x      | Solo esecuzione        |
+| 2      | -w-      | Solo scrittura         |
+| 3      | -wx      | Scrittura + esecuzione |
+| 4      | r--      | Solo lettura           |
+| 5      | r-x      | Lettura + esecuzione   |
+| 6      | rw-      | Lettura + scrittura    |
+| 7      | rwx      | Tutti i permessi       |
+
+Questa rappresentazione viene usata ad esempio nei comandi come `chmod` per assegnare i permessi a file e cartelle.
+
+Se ti riferivi a questo, allora sì: **7 è il massimo**.
