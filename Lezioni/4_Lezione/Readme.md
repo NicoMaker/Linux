@@ -703,12 +703,12 @@ Nel sistema Unix/Linux, ogni file o directory ha dei **permessi di accesso** ass
 
 I permessi principali sono:
 
-| Simbolo | Permesso | Significato                      |
-| ------- | -------- | -------------------------------- |
-| `r`     | read     | Lettura del contenuto del file   |
-| `w`     | write    | Modifica o eliminazione          |
-| `x`     | execute  | Esecuzione del file (es. script) |
-| `root `   | se togli ha sempre tutto                  |
+| Simbolo | Permesso                 | Significato                      |
+| ------- | ------------------------ | -------------------------------- |
+| `r`     | read                     | Lettura del contenuto del file   |
+| `w`     | write                    | Modifica o eliminazione          |
+| `x`     | execute                  | Esecuzione del file (es. script) |
+| `root ` | se togli ha sempre tutto |
 
 ---
 
