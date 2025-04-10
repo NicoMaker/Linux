@@ -285,5 +285,75 @@ Questo **chiude la shell dell’utente attuale** e **torna al precedente utente*
 
 ---
 
+### Opzioni Gruppi
 
+Certo! Ti spiego il significato e l'utilizzo delle opzioni **GroupAdd**, **GroupDel** e **GroupMod** con degli esempi pratici. Queste opzioni sono generalmente usate in ambiente **Linux** (da terminale) per gestire i gruppi di utenti.
 
+---
+
+#### 🔹 **GroupAdd** → _Aggiunge un nuovo gruppo_
+
+**Sintassi:**
+
+```bash
+groupadd nome_gruppo
+```
+
+**Esempio:**
+
+```bash
+groupadd sviluppatori
+```
+
+➡️ Crea un gruppo chiamato `sviluppatori`.
+
+---
+
+#### 🔹 **GroupDel** → _Rimuove un gruppo esistente_
+
+**Sintassi:**
+
+```bash
+groupdel nome_gruppo
+```
+
+**Esempio:**
+
+```bash
+groupdel sviluppatori
+```
+
+➡️ Elimina il gruppo `sviluppatori` (⚠️ non elimina gli utenti del gruppo, solo il gruppo stesso).
+
+---
+
+#### 🔹 **GroupMod** → _Modifica un gruppo esistente_
+
+**Sintassi:**
+
+```bash
+groupmod [opzioni] nome_gruppo
+```
+
+#### Le opzioni più comuni sono:
+
+- `-n nuovo_nome` → Rinominare un gruppo
+- `-g nuovo_GID` → Cambiare l’ID del gruppo (GID)
+
+**Esempio 1: rinominare un gruppo**
+
+```bash
+groupmod -n devteam sviluppatori
+```
+
+➡️ Rinomina il gruppo `sviluppatori` in `devteam`.
+
+**Esempio 2: cambiare GID**
+
+```bash
+groupmod -g 505 devteam
+```
+
+➡️ Cambia l'ID del gruppo `devteam` in 505.
+
+---
