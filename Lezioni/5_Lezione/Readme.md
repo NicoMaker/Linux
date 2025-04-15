@@ -230,4 +230,89 @@ Inserisci il tuo nome:
 Il nome inserito è:
 ```
 
-Questo è il comportamento che desideri ottenere con entrambi i comandi!
+### 🔒 Comando:
+
+```bash
+sudo iptables -A INPUT -s 8.8.8.8 -j DROP
+```
+
+---
+
+### 🧠 Spiegazione passo-passo:
+
+- `sudo`  
+  Esegue il comando con privilegi di superutente (necessari per modificare le regole del firewall).
+
+- `iptables`  
+  È il comando usato per configurare le regole del firewall su sistemi Linux.
+
+- `-A INPUT`  
+  Aggiunge (`-A`) una nuova regola alla catena `INPUT`, che gestisce il traffico in entrata.
+
+- `-s 8.8.8.8`  
+  Specifica l'indirizzo IP sorgente della connessione: in questo caso, **8.8.8.8** (uno dei DNS pubblici di Google).
+
+- `-j DROP`  
+  Indica che, se il pacchetto corrisponde alla regola (cioè proviene da `8.8.8.8`), deve essere **scartato** senza alcuna notifica.
+
+---
+
+### 💬 Commento inline:
+
+```bash
+# Blocca tutto il traffico in entrata proveniente dall'indirizzo IP 8.8.8.8
+sudo iptables -A INPUT -s 8.8.8.8 -j DROP
+```
+
+---
+
+### ⚠️ Nota:
+
+Questa regola **non ha effetto sul traffico in uscita**, quindi ad esempio se il tuo sistema contatta 8.8.8.8, la risposta sarà comunque bloccata in entrata. Se vuoi bloccare completamente ogni comunicazione con quell’IP (in entrata e in uscita), dovresti aggiungere una regola simile anche alla catena `OUTPUT`.
+
+### 📦 Comando:
+
+```bash
+sudo iptables -L
+```
+
+---
+
+### 🧠 Spiegazione:
+
+- `sudo`  
+  Esegue il comando con privilegi di superutente (richiesto per visualizzare le regole del firewall se non sei root).
+
+- `iptables`  
+  Comando usato per gestire il firewall in Linux.
+
+- `-L`  
+  Sta per **List** e serve a **visualizzare tutte le regole** correnti configurate nelle catene (`INPUT`, `OUTPUT`, `FORWARD`) del firewall.
+
+---
+
+### 💬 Commento inline:
+
+```bash
+# Mostra tutte le regole attualmente attive nel firewall (iptables)
+sudo iptables -L
+```
+
+---
+
+### 📋 Output tipico:
+
+Ti mostrerà un elenco di regole divise per catena, come ad esempio:
+
+```
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination
+
+
+```
