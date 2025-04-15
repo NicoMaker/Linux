@@ -2,6 +2,8 @@
 
 # Lezione 15 Aprile 2025
 
+- [Scripting File](Scripts)
+
 ## Shebang
 
 La riga:
