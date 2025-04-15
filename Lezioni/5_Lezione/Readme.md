@@ -316,3 +316,100 @@ target     prot opt source               destination
 
 
 ```
+
+Perfetto! Ecco il comando con spiegazione e commento dettagliato:
+
+---
+
+### 📦 Comando:
+
+```bash
+sudo iptables -L INPUT -n --line-number
+```
+
+---
+
+### 🧠 Spiegazione dettagliata:
+
+- `sudo`  
+  Esegue il comando con privilegi di amministratore (necessario per leggere/modificare le regole di iptables).
+
+- `iptables`  
+  Comando per gestire le regole del firewall in Linux.
+
+- `-L INPUT`  
+  Lista (`-L`) tutte le regole della **catena INPUT**, ovvero le regole che gestiscono il traffico **in entrata**.
+
+- `-n`  
+  Disabilita la risoluzione DNS e dei nomi host/IP. Mostra gli **IP e le porte in formato numerico**, rendendo l’output più veloce e dettagliato.
+
+- `--line-number`  
+  Aggiunge un **numero di riga** per ciascuna regola mostrata. Molto utile se vuoi **rimuovere** una regola specifica con `iptables -D`.
+
+---
+
+### 💬 Commento inline:
+
+```bash
+# Elenca le regole della catena INPUT con numeri di riga e indirizzi in formato numerico
+sudo iptables -L INPUT -n --line-number
+```
+
+---
+
+### 📋 Output tipico:
+
+```
+Chain INPUT (policy ACCEPT)
+num  target     prot opt source        destination
+1    DROP       all  --  8.8.8.8       0.0.0.0/0
+```
+
+Questo ti permette, ad esempio, di rimuovere la regola `DROP` in posizione 1 con:
+
+```bash
+sudo iptables -D INPUT 1
+```
+
+Certo! Se prima hai **bloccato** un indirizzo IP (es. `8.8.8.8`) con:
+
+```bash
+sudo iptables -A INPUT -s 8.8.8.8 -j DROP
+```
+
+E poi lo hai **verificato** con:
+
+```bash
+sudo iptables -L INPUT -n --line-number
+```
+
+Puoi **riabilitare** il traffico da quell’IP semplicemente **rimuovendo la regola** con `iptables -D`.
+
+---
+
+### ✅ Comando per riabilitare l’IP (es. 8.8.8.8):
+
+#### Metodo 1 – Se conosci il numero di riga:
+
+Supponiamo che la regola sia in **posizione 1**:
+
+```bash
+sudo iptables -D INPUT 1
+```
+
+#### Metodo 2 – Se vuoi eliminare la regola specifica (più sicuro):
+
+```bash
+sudo iptables -D INPUT -s 8.8.8.8 -j DROP
+```
+
+---
+
+### 💬 Commento inline:
+
+```bash
+# Rimuove la regola che blocca l'IP 8.8.8.8 dalla catena INPUT
+sudo iptables -D INPUT -s 8.8.8.8 -j DROP
+```
+
+---
