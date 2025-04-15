@@ -130,11 +130,9 @@ Ciao, Luca!
 - Se il valore contiene **spazi**, racchiudilo tra **doppi apici** `" "`  
   Es: `titolo="Il mio script"`
 
-
 Perfetto! Aggiungiamo ora una spiegazione semplice e chiara del comando `declare -r`, che serve a **rendere una variabile di sola lettura**, cioè **non modificabile dopo la sua dichiarazione**.
 
 Puoi aggiungerlo sotto alla sezione sulle variabili:
-
 
 ## Variabili in sola lettura con `declare -r`
 
@@ -178,4 +176,58 @@ Se vuoi, posso anche spiegarti altri usi del comando `declare`, ad esempio:
 - `declare -a` → per **array**
 - `declare -x` → per esportare come **variabile d'ambiente**
 
+## Esempio pratico
 
+Il comando `echo $name` in un terminale Linux o in un ambiente di shell come Bash restituirà il valore della variabile `name`.
+
+Se, ad esempio, la variabile `name` è stata precedentemente definita con un valore, come ad esempio:
+
+```bash
+name="Alice"
+```
+
+Esegui il comando:
+
+```bash
+echo $name
+```
+
+Il terminale restituirà:
+
+```
+Alice
+```
+
+Se invece la variabile `name` non è stata definita o è vuota, il comando `echo $name` restituirà una riga vuota.
+
+Ecco un esempio completo che include sia `read -p` che `echo`:
+
+```bash
+# Chiediamo all'utente di inserire un nome
+read -p "Inserisci il tuo nome: " name
+
+# Mostriamo il nome inserito dall'utente
+echo "Il nome inserito è: $name"
+```
+
+### Spiegazione:
+
+1. Il comando `read -p` visualizzerà il messaggio `"Inserisci il tuo nome: "` nel terminale, quindi si fermerà in attesa che l'utente inserisca qualcosa.
+2. Il valore che l'utente inserisce verrà assegnato alla variabile `name`.
+3. Successivamente, il comando `echo` stamperà il valore di `name`.
+
+### Esempio di esecuzione:
+
+```bash
+Inserisci il tuo nome: Alice
+Il nome inserito è: Alice
+```
+
+Se la variabile `name` è lasciata vuota, il comando `echo` restituirà una riga vuota:
+
+```bash
+Inserisci il tuo nome:
+Il nome inserito è:
+```
+
+Questo è il comportamento che desideri ottenere con entrambi i comandi!
